@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Listeners</title>
+        <h1>Event Listeners</h1>
+    </head>
+    <body>
+        <button id="myButton">
+            Click me
+        </button>
+        <button onclick="myFunc()">
+            Button
+        </button>
+        <input id="myInput">
+        <script>
+            function runMe(){
+                console.log("running");
+            }
+
+            const myButton = document.getElementById("myButton");
+
+            myButton.addEventListener("click",function(){
+                console.log("fighting");
+            })
+            myButton.addEventListener("mouseleave",function(){
+                alert("Mouse Leave");
+            })
+            myButton.addEventListener("dblclick",function(){
+                console.log("Mouse is double clicked");
+            })
+
+            myButton.addEventListener('focus',function(){
+                console.log("Focused");
+            })
+
+            const myInput = document.getElementById("myInput");
+            myInput.onchange = function(){
+                console.log("On Changed");
+            }
+
+            myInput.addEventListener("keyup",function(e){
+                console.log("Key up.");
+                console.log(e.key);
+            })
+
+            myInput.addEventListener("keydown",function(k){
+                if(k.key == 's'){
+                    k.preventDefault();
+                };
+                console.log("Key down.");
+            })
+
+            function myFunc(){
+                if(myInput.value == "Hamster"){
+                    console.log("You are correct.");
+                }else{
+                    console.log("You are incorrect.");
+                }
+            }
+
+            let x = prompt("Whats your name?");
+            console.log("You name is " + x);
+
+            window.addEventListener('resize',function(x){
+                console.log(x);
+            })
+
+        </script>
+    </body>
+</html>

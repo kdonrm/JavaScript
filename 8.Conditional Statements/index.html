@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Add JS To HTML</title>
+    </head>
+    <body>
+        <h1>Conditions</h1>
+        Age:
+        <input type="text" id="myInput">
+        <button onclick="checkInput()">Click me</button>
+        <br>
+        <br>
+        District
+        <select id="mySelect">
+            <option value="Colombo">Colombo</option>
+            <option value="Gampaha">Gampaha</option>
+            <option value="Ratnapura">Ratnapura</option>
+            <option value="Kalutara">Kalutara</option>
+        </select>
+        <button onclick="checkDistrict()">
+            Check District
+        </button>
+        <br>
+        <br>
+        District1
+        <select id="mySelect1">
+            <option value="Colombo">Colombo</option>
+            <option value="Gampaha">Gampaha</option>
+            <option value="Ratnapura">Ratnapura</option>
+            <option value="Kalutara">Kalutara</option>
+        </select>
+        <button onclick="checkDistrict1()">
+            Click on me
+        </button>
+        <script>
+            function checkInput(){
+                let age = document.getElementById("myInput").value;
+                if(age == ''){
+                    console.log("Please enter the age.");
+                }
+                //age = age == '' ? 10 : age;
+                console.log("My age is "+ age);
+                if(age >= 18){
+                    console.log("Older than 18.");
+                }else{
+                    console.log("Younger than 18.")
+                }
+            }
+
+            function checkDistrict(){
+                let district = document.getElementById("mySelect").value;
+                if(district == 'Colombo'){
+                    console.log("You are in Colombo.");
+                }else if(district == 'Gampaha'){
+                    console.log("You are in Gampaha.");
+                }else if(district == "Ratnapura"){
+                    console.log("You are in Ratnapura.");
+                }else{
+                    console.log("You are in Kalutara.");
+                }
+            }
+
+            function checkDistrict1(){
+                let district1 = document.getElementById("mySelect1").value;
+                switch(district1){
+                    case "Colombo":
+                        console.log("In Colombo");
+                        console.log("Ready");
+                        break;
+                    case "Gampaha": 
+                        console.log("Near Colombo");
+                        break;
+                    case "Ratnapura":
+                        console.log("In Ratnapura");
+                        break;
+                    case "Kalutara":
+                        console.log("In Kalutara");
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>

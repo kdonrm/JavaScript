@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Scope</title>
+    </head>
+    <body>
+        <script>
+            let globalScope = "This is Global scope var.";
+            
+            function test(){
+                let globalScope = "Changed";
+                let localScope = "This is Local scope var."
+                console.log(globalScope);
+                console.log(localScope);
+            }
+
+            test()
+
+            console.log(globalScope);
+
+            {
+                let myName = "Saman";
+                console.log(myName);
+                var blockScope = "This is a Block scope var.";
+            }
+
+            console.log(blockScope);
+
+        </script>
+    </body>
+</html>

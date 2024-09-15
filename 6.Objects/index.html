@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Objects</title>
+    </head>
+    <body>
+        <script>
+            let student = {
+                name : "Saman",
+                age : 24,
+                sayHi : function sayHi(){
+                    console.log("Hi");
+                }
+            }
+
+            student.sayHi();
+            console.log(student.name);
+            console.log(student.age);
+
+            student.age = 20;
+            console.log(student.age);
+
+            student.sayHello = function(){
+                console.log("Hello");
+            }
+
+            student.sayHello();
+
+            student.address = "90, Kandaudawaththa, Melegama, Badulla";
+            console.log(student.address);
+
+            console.log(student);
+
+            delete student.age;
+            console.log(student.age);
+
+            let student1 = {
+                name : "Ravindu",
+                age : 24,
+                sayHi1 : function sayHi1(){
+                    console.log("Hello my name is "+ this.name);
+                    console.log("My age is "+ this.age);
+                }
+
+            }
+            student1.sayHi1();
+
+            console.log(Object.keys(student1));
+            console.log(Object.values(student1));
+            console.log(Object.entries(student1));
+
+            let student2 = {
+                name : "Madusanka",
+                age : 23
+            }
+
+            Object.assign(student2,student1);
+
+            console.log(student2.name);
+            console.log(student2.sayHi1());
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Delay in JS</title>
+    </head>
+    <body>
+        <button id="button">
+            Click Me
+        </button>
+        <button id="animateButton">
+            Left
+        </button>
+        <button id="stopAnimate">
+            Stop
+        </button>
+        <P id="output">Changed</P>
+        <script>
+            const button = document.getElementById("button");
+            const output = document.getElementById("output");
+            const animateButton = document.getElementById("animateButton");
+            const stopAnimation = document.getElementById("stopAnimate");
+
+            function pressed(){
+                console.log("Clicked");
+                setTimeout(function(){
+                    output.innerHTML = "Clicked";
+                },2000)
+            }
+
+            button.onclick = pressed;
+
+            let left = 1;
+            //set Interval
+            let process;
+            function animate(){
+                process = setInterval(function(){
+                    left += 10;
+                    output.style.marginLeft = left+"px";
+                },500)
+            }
+            animateButton.onclick = animate;
+
+            function stopAnimate(){
+                console.log("Stopping");
+                clearInterval(process);
+            }
+
+            stopAnimation.onclick = stopAnimate;
+
+        </script>
+    </body>
+</html>

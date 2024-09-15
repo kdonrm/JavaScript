@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Add JS To HTML</title>
+    </head>
+    <body>
+        <label for="input1">Input1</label>
+        <input type="text" id="input1">
+        <br>
+        <br>
+        <label for="input2">Input2</label>
+        <input type="text" id="input2">
+        <br>
+        <br>
+        <button onclick="compare()">Click on me</button>
+        <br>
+        <br>
+        <div id="result"></div>
+        <script>
+            function compare(){
+                let value1 = document.getElementById("input1").value;
+                let value2 = document.getElementById("input2").value;
+                value1 = parseFloat(value1);
+                value2 = parseFloat(value2);
+                console.log(typeof value1,typeof value2);
+                let output = '';
+
+                if (value1 == value2){
+                    output = "value1 = value2 <br>";
+                }if (value1 === value2){
+                    output += "value1 === value2 <br>";
+                }if (value1 != value2){
+                    output += "value1 != value2 <br>";
+                }if (value1 !== value2){
+                    output += "value1 !== value2 <br>";
+                }if (value1 > 10 || value2 > 10){
+                    output += "value1 > 10 OR value2 > 10 <br>";
+                }if (!(value1 > 10)){
+                    output += "value1 NOT > 10";
+                }
+                // &&, ||, !
+                document.getElementById("result").innerHTML = output;
+            }
+        </script>
+    </body>
+</html>
+

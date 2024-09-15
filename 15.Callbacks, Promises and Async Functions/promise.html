@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Callback</title>
+    </head>
+    <body>
+        <input type="checkbox" name="myCheckbox" id="myCheckbox">
+        <script>
+            const myPromise = new Promise(function(resolve, reject){
+                // do something
+                let output;
+                if(document.getElementById('myCheckbox').checked){
+                    output = "Ok";
+                    resolve(output);
+                }else{
+                    output = "Fale";
+                    reject(output);
+                }
+            })
+            myPromise.then(function(data){
+                console.log(data);
+            }).catch(function(data){
+                console.log(data);
+            })
+        </script>
+    </body>
+</html>

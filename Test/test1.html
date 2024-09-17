@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <input type="text" id="inpt">
+    <button onclick="get()">Click me</button>
+    <script>
+        function get(){
+            let inpt = document.getElementById("inpt").value;
+            if(inpt == student1.name){
+                console.log("I am "+student1.age+" and lives in "+student1.address+".");
+            }else{
+                console.log("There is an error in your input.")
+            }
+        }
+
+        const student1 = {
+            name : "Ravindu",
+            age : 24,
+            address : "Colombo"
+        }
+    </script>
+</body>
+</html>

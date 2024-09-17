@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <input id="inpt" type="text">
+    <button onclick="click()" >
+        Click me
+    </button>
+    <script>
+        let inpt = document.getElementById("inpt").value;
+        console.log(inpt);
+        let student1 = {
+            name : "Ravindu",
+            age : 24,
+            address : "Kalutara",
+            sayHI : "I am "+this.age+" and lives in "+this.address
+        }
+
+        function click(){
+            console.log(inpt);
+            if (inpt == student1.name){
+                console.log(student1.sayHI());
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS OOP</title>
+</head>
+<body>
+    <script>
+        let person1 = {
+            name : "Saman",
+            age : 20,
+            address : "Colombo",
+            subject : [
+                'English', 'Maths', 'Sinhala'
+            ],
+            sayHI : function(){
+                console.log("Hi, I am "+this.name);
+            },
+            school : {
+                name : "Central School",
+                phone : "01122334455",
+                address : "School read, Main city"
+            }
+        }
+
+        // Object construnctor function
+
+        function Person(name,age,address){
+            this.name = name;
+            this.age = age;
+            this.addr = address;
+            this.sayHI = function(){
+                console.log("Hi, I am "+this.name);
+            }
+
+        }
+
+        Person.prototype.sayHello = function(){
+            console.log("Hello...... I am "+ this.name);
+        }
+
+        let person2 = new Person("Sunil",24,"Kalutara");
+        console.log(person2);
+
+        let person3 = new Person("Anil",25,"Gampaha");
+        console.log(person3);
+
+        //Prototype based
+        console.log(person3.__proto__);
+
+        person3.sayHello();
+        person2.sayHello();
+
+        //call()
+        const student1 = {
+            fullName : function(start,end){
+                console.log(start+this.firstName+" "+this.lastName+end);
+            }
+        }
+
+        const student2 = {
+            firstName : "Saman",
+            lastName : "Kumara"
+        }
+
+        student1.fullName.call(student2,"* "," --");
+
+        //apply()
+        student1.fullName.apply(student2,["** "," ----"]);
+
+        //bind()
+        let myFunction = student1.fullName.bind(student2,"--** "," 98986");
+        myFunction();
+    </script>
+</body>
+</html>
